@@ -40,9 +40,9 @@ if __name__ == "__main__":
     model, trace = run_cct_model(X)
 
     az.plot_posterior(trace, var_names=["D"])
-    plt.show()
+    plt.show() # Close this plot window manually to continue
     az.plot_posterior(trace, var_names=["Z"])
-    plt.show()
+    plt.show() # Close this too to allow script to finish printing
 
     summary = az.summary(trace, var_names=["D", "Z"])
     print(summary)
